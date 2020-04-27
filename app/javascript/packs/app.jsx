@@ -4,23 +4,17 @@
 
 import React from "react";
 import ReactDOM from "react-dom";
-import PropTypes from "prop-types";
 
-const Hello = props => (
-  <div class="container bg-blue-300">Hello {props.name}!</div>
-);
-
-Hello.defaultProps = {
-  name: "David"
-};
-
-Hello.propTypes = {
-  name: PropTypes.string
-};
+import POEData from "./POE/POEData"
 
 document.addEventListener("DOMContentLoaded", () => {
+  const dataNode = document.getElementById('data')
+  console.log(dataNode)
+  const data = JSON.parse(dataNode.getAttribute('data'))
+  console.log(data)
+
   ReactDOM.render(
-    <Hello name="React" />,
+    <POEData data={data}/>,
     document.body.appendChild(document.createElement("div"))
   );
 });

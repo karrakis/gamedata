@@ -1,2 +1,5 @@
-<%= @data %>
-<%=javascript_pack_tag 'hello_react'%>
+<%= content_tag :div,
+  id: "data",
+  data: @data.to_json do %>
+<% end %>
+<%=javascript_pack_tag 'app'%>
